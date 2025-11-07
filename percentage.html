@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Percentage Calculator</title>
+    <style>
+        .container {
+            max-width: 400px;
+        background-color: rgb(233, 237, 197);
+            padding: 20px;
+            border: 1px solid #160101;
+            border-radius: 5px;
+            text-align: center;
+            margin: auto;
+            margin-top: 50px;
+            box-shadow: 10px 10px 10px rgb(18, 1, 1);
+        }
+        .marks input {
+            margin: 10px 0;
+            padding: 8px;
+            width: 80%;
+
+        }
+        .btn{
+        color: blue;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Percentage Calculator</h1>
+
+    <div class="marks">
+        <input type="number" id="marksObtained" placeholder="Enter marks obtained"><br>
+        <input type="number" id="totalMarks" placeholder="Enter total marks">
+    </div>
+    
+<div >
+    <button class="btn" onclick="calculatePercentage()">Calculate</button>
+</div>
+    <p> Result: <span id="result"></span></p>
+    </div>
+
+    <script>function calculatePercentage() {
+    const marksObtained = document.getElementById('marksObtained').value;
+    const totalMarks = document.getElementById('totalMarks').value;
+    const resultElement = document.getElementById('result');
+
+    if (isNaN(marksObtained) || isNaN(totalMarks) || totalMarks <= 0) {
+        resultElement.textContent = "answer k liye k liye zero sy bara number dalo";
+        return;
+    }
+
+    const percentage = (marksObtained / totalMarks) * 100;
+    resultElement.textContent = percentage.toFixed(2) + "%";
+}</script>
+</body>
+</html>
